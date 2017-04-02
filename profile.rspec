@@ -157,7 +157,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-38">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.64" type="ipv4" netmask="255.255.255.0"/>
@@ -169,7 +169,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-45">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.61" type="ipv4" netmask="255.255.255.0"/>
@@ -181,7 +181,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-42">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.62" type="ipv4" netmask="255.255.255.0"/>
@@ -193,7 +193,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-36">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.65" type="ipv4" netmask="255.255.255.0"/>
@@ -205,7 +205,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-40">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.63" type="ipv4" netmask="255.255.255.0"/>
@@ -217,7 +217,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-47">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.91" type="ipv4" netmask="255.255.255.0"/>
@@ -229,7 +229,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-49">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.92" type="ipv4" netmask="255.255.255.0"/>
@@ -241,7 +241,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-51">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.93" type="ipv4" netmask="255.255.255.0"/>
@@ -253,7 +253,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-55">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.94" type="ipv4" netmask="255.255.255.0"/>
@@ -265,7 +265,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-53">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.95" type="ipv4" netmask="255.255.255.0"/>
@@ -277,7 +277,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-69">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.17" type="ipv4" netmask="255.255.255.0"/>
@@ -291,7 +291,7 @@
             <emulab:xen ram="4096" disk="10" core="2"/>
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/server/server.sh"/>
+<execute shell="sh" command="sh /local/repository/server/server.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-71">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.16" type="ipv4" netmask="255.255.255.0"/>
@@ -304,7 +304,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-67">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.18" type="ipv4" netmask="255.255.255.0"/>
@@ -316,7 +316,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-73">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.24" type="ipv4" netmask="255.255.255.0"/>
@@ -328,7 +328,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-77">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.25" type="ipv4" netmask="255.255.255.0"/>
@@ -340,7 +340,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-75">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.26" type="ipv4" netmask="255.255.255.0"/>
@@ -352,7 +352,7 @@
             <emulab:xen ram="4096" disk="10" core="2"/>
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/server/server.sh"/>
+<execute shell="sh" command="sh /local/repository/server/server.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-81">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.4" type="ipv4" netmask="255.255.255.0"/>
@@ -365,7 +365,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-83">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.5" type="ipv4" netmask="255.255.255.0"/>
@@ -377,7 +377,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-78">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.6" type="ipv4" netmask="255.255.255.0"/>
@@ -391,7 +391,7 @@
             <emulab:xen ram="4096" disk="10" core="2"/>
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/server/server.sh"/>
+<execute shell="sh" command="sh /local/repository/server/server.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-88">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.27" type="ipv4" netmask="255.255.255.0"/>
@@ -404,7 +404,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-84">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.28" type="ipv4" netmask="255.255.255.0"/>
@@ -416,7 +416,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-86">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.29" type="ipv4" netmask="255.255.255.0"/>
@@ -428,7 +428,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-93">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.22" type="ipv4" netmask="255.255.255.0"/>
@@ -440,7 +440,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-95">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.23" type="ipv4" netmask="255.255.255.0"/>
@@ -452,7 +452,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-91">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.21" type="ipv4" netmask="255.255.255.0"/>
@@ -466,7 +466,7 @@
             <emulab:xen ram="4096" disk="10" core="2"/>
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/server/server.sh"/>
+<execute shell="sh" command="sh /local/repository/server/server.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-101">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.12" type="ipv4" netmask="255.255.255.0"/>
@@ -479,7 +479,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-99">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.13" type="ipv4" netmask="255.255.255.0"/>
@@ -491,7 +491,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-97">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.14" type="ipv4" netmask="255.255.255.0"/>
@@ -505,7 +505,7 @@
             <emulab:xen ram="4096" disk="10" core="2"/>
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/server/server.sh"/>
+<execute shell="sh" command="sh /local/repository/server/server.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-107">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.1" type="ipv4" netmask="255.255.255.0"/>
@@ -520,7 +520,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-104">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.2" type="ipv4" netmask="255.255.255.0"/>
@@ -532,7 +532,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-102">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.3" type="ipv4" netmask="255.255.255.0"/>
@@ -544,7 +544,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-11">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.71" type="ipv4" netmask="255.255.255.0"/>
@@ -556,7 +556,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-13">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.73" type="ipv4" netmask="255.255.255.0"/>
@@ -568,7 +568,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-15">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.72" type="ipv4" netmask="255.255.255.0"/>
@@ -580,7 +580,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-17">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.74" type="ipv4" netmask="255.255.255.0"/>
@@ -592,7 +592,7 @@
             
         </sliver_type>
 <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-27">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.75" type="ipv4"/>
@@ -604,7 +604,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-64">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.81" type="ipv4" netmask="255.255.255.0"/>
@@ -616,7 +616,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-62">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.82" type="ipv4" netmask="255.255.255.0"/>
@@ -628,7 +628,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-60"/>
     </node><node xmlns="http://www.geni.net/resources/rspec/3" client_id="sw3cc7">
@@ -638,7 +638,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-58">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.84" type="ipv4" netmask="255.255.255.0"/>
@@ -650,7 +650,7 @@
             
         </sliver_type>
         <services>
-<execute shell="sh" command="/local/repository/client.sh"/>
+<execute shell="sh" command="sh /local/repository/client.sh"/>
 </services>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-56">
             <ip xmlns="http://www.geni.net/resources/rspec/3" address="10.10.10.85" type="ipv4" netmask="255.255.255.0"/>
