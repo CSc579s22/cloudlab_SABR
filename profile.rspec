@@ -10,7 +10,7 @@
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-2">
         </interface>
         <site xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" id="Site 1"/>
-        <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-103"/>
+        <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-103" type="ipv4" netmask="255.255.255.0"/>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-105"/>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-106"/>
     </node><node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="sw2a">
@@ -128,6 +128,7 @@
             <disk_image xmlns="http://www.geni.net/resources/rspec/3" name="urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU14-OVS2.31"/></sliver_type>
 
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-8">
+        
         </interface>
         <site xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" id="Site 1"/>
         <interface xmlns="http://www.geni.net/resources/rspec/3" client_id="interface-37"/>
