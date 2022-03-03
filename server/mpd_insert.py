@@ -178,7 +178,7 @@ def read_mpd(mpd_file):
                                 try:
                                     segment_size = float(segment_info.attrib['size']) * float(
                                         SIZE_DICT[segment_info.attrib['scale']])
-                                except KeyError, e:
+                                except KeyError as e:
                                     print("Error in reading Segment sizes :{}".format(e))
                                     continue
                                 seg_no = segment_info.attrib['id']
