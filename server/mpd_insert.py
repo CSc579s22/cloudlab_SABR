@@ -114,52 +114,52 @@ def get_url_list(media, segment_duration,  playback_duration, bitrate):
 
 
 def read_mpd(mpd_file):
-	try:
-		client=pymongo.MongoClient()
-		print( "Connected successfully again!!!")
-	except pymongo.errors.ConnectionFailure, e:
-		print("Could not connect to MongoDB sadly: %s" % e)
-	db = client.cachestatus
-	table = db.mpdinfo
+    try:
+        client=pymongo.MongoClient()
+        print( "Connected successfully again!!!")
+    except pymongo.errors.ConnectionFailure as e:
+        print("Could not connect to MongoDB sadly: %s" % e)
+    db = client.cachestatus
+    table = db.mpdinfo
 
-	""" Module to read the MPD file"""
-	url = []
-	print("Reading the MPD file")
-	try:
-		tree = ET.parse(mpd_file)
-	except IOError:
-		print("MPD file not found. Exiting")
-		return None
-	config_dash.JSON_HANDLE["video_metadata"] = {'mpd_file': mpd_file}
-	root = tree.getroot()
-	dashplayback = DashPlayback()
-	if 'MPD' in get_tag_name(root.tag).upper():
-		if MEDIA_PRESENTATION_DURATION in root.attrib:
-			dashplayback.playback_duration = get_playback_time(root.attrib[MEDIA_PRESENTATION_DURATION])
-		if MIN_BUFFER_TIME in root.attrib:
-			dashplayback.min_buffer_time = get_playback_time(root.attrib[MIN_BUFFER_TIME])
-	#print("-----------MPD PARSER BASEURL------------- %s \n -----------------"%root[0])
-	b_period = root[0]
-	for b_url in b_period:
-		if 'url' in b_url.attrib: 
-			url.append(b_url.attrib['url'])
-	video_segment_duration = None
-	media_info = []
-	child_period = root[1]
-	for adaptation_set in child_period:
-		if 'mimeType' in adaptation_set.attrib:
-			media_found = False
-    		if 'audio' in adaptation_set.attrib['mimeType']:
-    			media_object = dashplayback.audio
-    			media_found = False
-    			print("Found Audio")
-    		elif 'video' in adaptation_set.attrib['mimeType']:
-    			media_object = dashplayback.video
-    			media_found = True
-    			print("Found Video")
-    		if media_found:
-    			print("Retrieving Media")
-            	config_dash.JSON_HANDLE["video_metadata"]['available_bitrates'] = list()
+    """ Module to read the MPD file"""
+    url = []
+    print("Reading the MPD file")
+    try:
+        tree = ET.parse(mpd_file)
+    except IOError:
+        print("MPD file not found. Exiting")
+        return None
+    config_dash.JSON_HANDLE["video_metadata"] = {'mpd_file': mpd_file}
+    root = tree.getroot()
+    dashplayback = DashPlayback()
+    if 'MPD' in get_tag_name(root.tag).upper():
+        if MEDIA_PRESENTATION_DURATION in root.attrib:
+            dashplayback.playback_duration = get_playback_time(root.attrib[MEDIA_PRESENTATION_DURATION])
+        if MIN_BUFFER_TIME in root.attrib:
+            dashplayback.min_buffer_time = get_playback_time(root.attrib[MIN_BUFFER_TIME])
+    #print("-----------MPD PARSER BASEURL------------- %s \n -----------------"%root[0])
+    b_period = root[0]
+    for b_url in b_period:
+        if 'url' in b_url.attrib:
+            url.append(b_url.attrib['url'])
+    video_segment_duration = None
+    media_info = []
+    child_period = root[1]
+    for adaptation_set in child_period:
+        if 'mimeType' in adaptation_set.attrib:
+            media_found = False
+            if 'audio' in adaptation_set.attrib['mimeType']:
+                media_object = dashplayback.audio
+                media_found = False
+                print("Found Audio")
+            elif 'video' in adaptation_set.attrib['mimeType']:
+                media_object = dashplayback.video
+                media_found = True
+                print("Found Video")
+            if media_found:
+                print("Retrieving Media")
+                config_dash.JSON_HANDLE["video_metadata"]['available_bitrates'] = list()
                 for representation in adaptation_set:
                     bandwidth = int(representation.attrib['bandwidth'])
                     config_dash.JSON_HANDLE["video_metadata"]['available_bitrates'].append(bandwidth)
@@ -188,14 +188,14 @@ def read_mpd(mpd_file):
                                 #print seg_no
                                 
                                 if "$Number$%d" in urlstring:
-                                	firststr = str(seg_no)
-                                	urlstring=urlstring.replace("$Number$%d",str(seg_no))
+                                    firststr = str(seg_no)
+                                    urlstring=urlstring.replace("$Number$%d",str(seg_no))
                                 else:
-                                	oldstr = "2s"+prev_seg
-                                	newstr = "2s"+str(seg_no)
-                                	#print oldstr
-                                	#print newstr
-                                	urlstring=urlstring.replace(oldstr,newstr)
+                                    oldstr = "2s"+prev_seg
+                                    newstr = "2s"+str(seg_no)
+                                    #print oldstr
+                                    #print newstr
+                                    urlstring=urlstring.replace(oldstr,newstr)
                                 
                                 prev_seg = str(seg_no)
                                 #print urlstring
