@@ -2,5 +2,5 @@
 for i in `seq 1 50`;
 do
         sudo mkdir /var/www/html/BigBuckBunny_2s_mod$i
-        sudo ln -s /var/www/html/www-itec.uni-klu.ac.at/ /var/www/html/BigBuckBunny_2s_mod$i/www-itec.uni-klu.ac.at
+        sudo ln -s /var/www/html/ftp.itec.aau.at/ /var/www/html/BigBuckBunny_2s_mod$i/ftp.itec.aau.at
 done
