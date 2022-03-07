@@ -89,5 +89,5 @@ def cache_hit(res):
     # print("Cache hit\n")
 
 
-sniff(iface='eth1', prn=http_header, store=0, lfilter=lambda p: "GET" in str(p), filter="tcp[32:4] = 0x47455420")
+sniff(iface='eno1', prn=http_header, store=0, lfilter=lambda p: "GET" in str(p), filter="tcp[32:4] = 0x47455420")
 # sniff(iface='eth1', prn=http_header, lfilter=lambda p: "GET" in str(p), filter="tcp dst port 80")
