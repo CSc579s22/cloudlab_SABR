@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MPD file Generated with GPAC version 0.5.1-DEV-rev5379  on 2014-09-10T13:30:18Z-->
 <MPD xmlns="urn:mpeg:dash:schema:mpd:2011" minBufferTime="PT1.500000S" type="static" mediaPresentationDuration="PT0H4M58.46S" profiles="urn:mpeg:dash:profile:isoff-live:2011">
-  <BaseURLs>
-		<BaseURL url="http://10.10.10.3/" />
-		<BaseURL url="http://10.10.10.5/" />
-		<BaseURL url="http://10.10.10.8/" />
- </BaseURLs>
   <Period duration="PT0H4M58.46S">
     <AdaptationSet mimeType="video/mp4" segmentAlignment="true" group="1" maxWidth="480" maxHeight="360" maxFrameRate="24" par="4:3">
       <Representation id="320x240 89.0kbps" mimeType="video/mp4" codecs="avc1.42c00d" width="320"  height="240" frameRate="24" sar="1:1" startWithSAP="1"  bandwidth="89283" >
