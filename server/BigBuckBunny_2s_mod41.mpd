@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MPD file Generated with GPAC version 0.5.1-DEV-rev5379  on 2014-09-10T13:30:18Z-->
 <MPD xmlns="urn:mpeg:dash:schema:mpd:2011" minBufferTime="PT1.500000S" type="static" mediaPresentationDuration="PT0H4M58.46S" profiles="urn:mpeg:dash:profile:isoff-live:2011">
-  <BaseURLs>
-		<BaseURL url="http://10.10.10.3/" />
-		<BaseURL url="http://10.10.10.5/" />
-		<BaseURL url="http://10.10.10.8/" />
- </BaseURLs>
   <Period duration="PT0H4M58.46S">
     <AdaptationSet mimeType="video/mp4" segmentAlignment="true" group="1" maxWidth="480" maxHeight="360" maxFrameRate="24" par="4:3">
       <Representation id="320x240 89.0kbps" mimeType="video/mp4" codecs="avc1.42c00d" width="320"  height="240" frameRate="24" sar="1:1" startWithSAP="1"  bandwidth="89283" >
@@ -312,7 +307,7 @@
 	    <SegmentSize id="BigBuckBunny_2s84.m4s" size="360.0" scale="Kbits"/>
 	    <SegmentSize id="BigBuckBunny_2s46.m4s" size="488.0" scale="Kbits"/>
 	    <SegmentSize id="BigBuckBunny_2s20.m4s" size="520.0" scale="Kbits"/>
-	    <SegmentSize id="BigBuckBunny_2s68.m4s" size="136.0" scale="Kbits"/>      
+	    <SegmentSize id="BigBuckBunny_2s68.m4s" size="136.0" scale="Kbits"/>
 	  </Representation>
 	  <Representation id="1280x720 783.0kbps" mimeType="video/mp4" codecs="avc1.42c01f" width="1280" height="720" frameRate="24" sar="1:1" startWithSAP="1" bandwidth="791182" >
 	  	<SegmentTemplate timescale="96" media="BigBuckBunny_2s_mod41/ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/2sec/bunny_$Bandwidth$bps/BigBuckBunny_2s$Number$%d.m4s" startNumber="1" duration="192" initialization="BigBuckBunny_2s_mod41/ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/2sec/bunny_$Bandwidth$bps/BigBuckBunny_2s_init.mp4" />
@@ -772,7 +767,7 @@
 	    <SegmentSize id="BigBuckBunny_2s46.m4s" size="3104.0" scale="Kbits"/>
 	    <SegmentSize id="BigBuckBunny_2s20.m4s" size="3528.0" scale="Kbits"/>
 	    <SegmentSize id="BigBuckBunny_2s68.m4s" size="1128.0" scale="Kbits"/>
-	  </Representation>	  
+	  </Representation>
     </AdaptationSet>
   </Period>
 </MPD>

@@ -8,14 +8,13 @@ import re
 import config_dash
 import pymongo
 
-
 # Dictionary to convert size to bits
-SIZE_DICT = {'bits':   1,
-             'Kbits':  1024,
-             'Mbits':  1024*1024,
-             'bytes':  8,
-             'KB':  1024*8,
-             'MB': 1024*1024*8,
+SIZE_DICT = {'bits': 1,
+             'Kbits': 1024,
+             'Mbits': 1024 * 1024,
+             'bytes': 8,
+             'KB': 1024 * 8,
+             'MB': 1024 * 1024 * 8,
              }
 # Try to import the C implementation of ElementTree which is faster
 # In case of ImportError import the pure Python implementation
@@ -34,7 +33,7 @@ def get_tag_name(xml_element):
              Return: SegmentTemplate
     """
     try:
-        tag_name = xml_element[xml_element.find('}')+1:]
+        tag_name = xml_element[xml_element.find('}') + 1:]
     except TypeError:
         print("Unable to retrieve the tag. ")
         return None
@@ -63,6 +62,7 @@ def get_playback_time(playback_duration):
 
 class MediaObject(object):
     """Object to handel audio and video stream """
+
     def __init__(self):
         self.min_buffer_time = None
         self.start = None
@@ -80,15 +80,15 @@ class DashPlayback:
     Audio[bandwidth] : {duration, url_list}
     Video[bandwidth] : {duration, url_list}
     """
-    def __init__(self):
 
+    def __init__(self):
         self.min_buffer_time = None
         self.playback_duration = None
         self.audio = dict()
         self.video = dict()
 
 
-def get_url_list(media, segment_duration,  playback_duration, bitrate):
+def get_url_list(media, segment_duration, playback_duration, bitrate):
     """
     Module to get the List of URLs
     """
@@ -115,8 +115,8 @@ def get_url_list(media, segment_duration,  playback_duration, bitrate):
 
 def read_mpd(mpd_file):
     try:
-        client=pymongo.MongoClient()
-        print( "Connected successfully again!!!")
+        client = pymongo.MongoClient()
+        print("Connected successfully again!!!")
     except pymongo.errors.ConnectionFailure as e:
         print("Could not connect to MongoDB sadly: %s" % e)
     db = client.cachestatus
@@ -138,7 +138,7 @@ def read_mpd(mpd_file):
             dashplayback.playback_duration = get_playback_time(root.attrib[MEDIA_PRESENTATION_DURATION])
         if MIN_BUFFER_TIME in root.attrib:
             dashplayback.min_buffer_time = get_playback_time(root.attrib[MIN_BUFFER_TIME])
-    #print("-----------MPD PARSER BASEURL------------- %s \n -----------------"%root[0])
+    # print("-----------MPD PARSER BASEURL------------- %s \n -----------------"%root[0])
     b_period = root[0]
     for b_url in b_period:
         if 'url' in b_url.attrib:
@@ -171,8 +171,8 @@ def read_mpd(mpd_file):
                             media_object[bandwidth].timescale = float(segment_info.attrib['timescale'])
                             media_object[bandwidth].initialization = segment_info.attrib['initialization']
                             urlstring = segment_info.attrib['media']
-                            urlstring=urlstring.replace("$Bandwidth$",str(bandwidth))
-                            #print urlstring
+                            urlstring = urlstring.replace("$Bandwidth$", str(bandwidth))
+                            # print urlstring
                         if 'video' in adaptation_set.attrib['mimeType']:
                             if "SegmentSize" in get_tag_name(segment_info.tag):
                                 try:
@@ -182,30 +182,31 @@ def read_mpd(mpd_file):
                                     print("Error in reading Segment sizes :{}".format(e))
                                     continue
                                 seg_no = segment_info.attrib['id']
-                                #print seg_no
+                                # print seg_no
                                 seg_no = re.findall(r'\d+', seg_no)
-                                seg_no = seg_no[len(seg_no)-2]
-                                #print seg_no
-                                
+                                seg_no = seg_no[len(seg_no) - 2]
+                                # print seg_no
+
                                 if "$Number$%d" in urlstring:
                                     firststr = str(seg_no)
-                                    urlstring=urlstring.replace("$Number$%d",str(seg_no))
+                                    urlstring = urlstring.replace("$Number$%d", str(seg_no))
                                 else:
-                                    oldstr = "2s"+prev_seg
-                                    newstr = "2s"+str(seg_no)
-                                    #print oldstr
-                                    #print newstr
-                                    urlstring=urlstring.replace(oldstr,newstr)
-                                
+                                    oldstr = "2s" + prev_seg
+                                    newstr = "2s" + str(seg_no)
+                                    # print oldstr
+                                    # print newstr
+                                    urlstring = urlstring.replace(oldstr, newstr)
+
                                 prev_seg = str(seg_no)
-                                #print urlstring
+                                # print urlstring
                                 media_object[bandwidth].segment_sizes.append(segment_size)
-                                post = {"urn": urlstring, "quality": str(bandwidth), "seg_no": int(seg_no), "seg_size": int(segment_size)}
-                                #print urlstring
-                                mongo_ins = table.replace_one({"urn": urlstring},post,True)
+                                post = {"urn": urlstring, "quality": str(bandwidth), "seg_no": int(seg_no),
+                                        "seg_size": int(segment_size)}
+                                # print urlstring
+                                mongo_ins = table.replace_one({"urn": urlstring}, post, True)
                             elif "SegmentTemplate" in get_tag_name(segment_info.tag):
-                                video_segment_duration = (float(segment_info.attrib['duration'])/float(
+                                video_segment_duration = (float(segment_info.attrib['duration']) / float(
                                     segment_info.attrib['timescale']))
                                 print("Segment Playback Duration = {}".format(video_segment_duration))
-                media_info.append(media_object[bandwidth])                        
-    #return media_info
+                media_info.append(media_object[bandwidth])
+                # return media_info
