@@ -1,18 +1,13 @@
 #!/usr/bin/env python
 
 from __future__ import division
-from scapy.all import *
-
-from scapy.layers import http
 import pymongo
-import mpd_insert
-from collections import defaultdict
-from datetime import datetime
+from scapy.all import *
+from scapy.layers import http
 
-stars = lambda n: "*" * n
+# stars = lambda n: "*" * n
 
 MAX_CACHE_SIZE = 4982162063
-
 # MAX_CACHE_SIZE =  2491081032
 
 
@@ -21,25 +16,24 @@ current_cache_size = 0
 estimated_cache_size = current_cache_size
 
 
-def http_header(packet):
-    http_packet = str(packet)
+def http_header(packets):
+    http_packet = str(packets)
     if http_packet.find('GET'):
-        return GET_print(packet)
+        return get_print(packets)
 
 
 # This API will read a list of MPDs and parse them into data structures
-def GET_print(packet):
+def get_print(packets):
     """
      Performing MongoDB initialization here
     """
-    http_layer = packet.getlayer(http.HTTPRequest)
+    http_layer = packets.getlayer(http.HTTPRequest)
     http_packet = http_layer.fields
-    # print'\n%s'%http_packet["Path"]
     print("\n%s" % http_packet["Path"])
 
     try:
         client = pymongo.MongoClient()
-        print("Connected successfully again!!!")
+        print("Connected successfully again!")
     except pymongo.errors.ConnectionFailure as e:
         print("Could not connect to MongoDB sadly: %s" % e)
     db = client.cachestatus
@@ -48,7 +42,7 @@ def GET_print(packet):
     res = table.find_one({"urn": f_path})
     try:
         client = pymongo.MongoClient()
-        print("Connected successfully again!!!")
+        print("Connected successfully again!")
     except pymongo.errors.ConnectionFailure as e:
         print("Could not connect to MongoDB sadly: %s" % e)
     db2 = client.cachestatus
@@ -62,7 +56,6 @@ def GET_print(packet):
     if "init" not in f_path and "mpd" not in f_path:
         if res is None:
             print('Generating a cache miss\n')
-
         else:
             print('**************************Generating a cache hit\n**********************')
             cache_hit(res)
@@ -86,8 +79,13 @@ def cache_hit(res):
     up_date = table.update_one({'urn': res['urn']}, {'$inc': {"hit_rate": 1}})
     up_date = table.update_one({'urn': res['urn']},
                                {'$set': {'date': datetime.utcnow(), 'cache_size': res2['cache_size']}})
-    # print("Cache hit\n")
+    print("Cache hit\n")
 
 
-sniff(iface='eno1', prn=http_header, store=0, lfilter=lambda p: "GET" in str(p), filter="tcp[32:4] = 0x47455420")
-# sniff(iface='eth1', prn=http_header, lfilter=lambda p: "GET" in str(p), filter="tcp dst port 80")
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python2 http_capture.py [interface]")
+        sys.exit(1)
+    print("Interface: " + sys.argv[1])
+    sniff(iface=sys.argv[1], prn=http_header, store=0, lfilter=lambda p: "GET" in str(p), filter="tcp[32:4] = 0x47455420")
+    # sniff(iface='eth1', prn=http_header, lfilter=lambda p: "GET" in str(p), filter="tcp dst port 80")

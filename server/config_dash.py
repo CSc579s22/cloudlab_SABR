@@ -19,8 +19,9 @@
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-from time import strftime
 import os
+from time import strftime
+
 # The configuration file for the AStream module
 # create logger
 LOG_NAME = 'AStream_log'

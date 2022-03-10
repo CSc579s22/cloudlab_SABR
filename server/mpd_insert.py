@@ -1,7 +1,6 @@
 """ Module for reading the MPD file
     Author: Parikshit Juluri
     Contact : pjuluri@umkc.edu
-
 """
 from __future__ import division
 import re
@@ -123,7 +122,7 @@ def read_mpd(mpd_file):
     table = db.mpdinfo
 
     """ Module to read the MPD file"""
-    url = []
+    # url = []
     print("Reading the MPD file")
     try:
         tree = ET.parse(mpd_file)
@@ -139,13 +138,15 @@ def read_mpd(mpd_file):
         if MIN_BUFFER_TIME in root.attrib:
             dashplayback.min_buffer_time = get_playback_time(root.attrib[MIN_BUFFER_TIME])
     # print("-----------MPD PARSER BASEURL------------- %s \n -----------------"%root[0])
-    b_period = root[0]
-    for b_url in b_period:
-        if 'url' in b_url.attrib:
-            url.append(b_url.attrib['url'])
+    # TODO: clarkzjw
+    # parsing baseURL seems useless here
+    # b_period = root[0]
+    # for b_url in b_period:
+    #     if 'url' in b_url.attrib:
+    #         url.append(b_url.attrib['url'])
     video_segment_duration = None
     media_info = []
-    child_period = root[1]
+    child_period = root[0]
     for adaptation_set in child_period:
         if 'mimeType' in adaptation_set.attrib:
             media_found = False
