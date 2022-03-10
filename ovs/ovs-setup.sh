@@ -10,6 +10,7 @@ sudo systemctl restart openvswitch-switch
 sudo ovs-vsctl add-br br0
 
 # add ports to ovs bridge accordingly
+# sudo ifconfig eth1 0
 # sudo ovs-vsctl add-port br0 eth1
 
 # set bridge controller to pox

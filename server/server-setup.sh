@@ -32,11 +32,11 @@ sudo /usr/bin/python -m pip install requests pymongo numpy scipy 'pandas<0.19' '
 
 # Prepare mpd file for streaming
 sudo mkdir -p /var/www/html/ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/
+cd /proj/QoESDN/videos || exit
 sudo cp -r ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/2sec/ /var/www/html/ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/2sec/
 sudo cp /proj/QoESDN/cloudlab_SABR/server/mpd/BigBuckBunny_2s_mod* /var/www/html/ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/2sec/
 for i in $(seq 1 50);
 do
-  echo "$i"
   sudo mkdir /var/www/html/BigBuckBunny_2s_mod"$i"
   sudo ln -s /var/www/html/ftp.itec.aau.at/ /var/www/html/BigBuckBunny_2s_mod"$i"/ftp.itec.aau.at
 done
