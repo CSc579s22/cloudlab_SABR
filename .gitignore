@@ -1,3 +1,6 @@
+server/result/
+*.mkv
+.DS_Store
 .idea/
 __pycache__/
 

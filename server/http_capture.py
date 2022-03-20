@@ -84,7 +84,7 @@ def cache_hit(res):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python2 http_capture.py [interface]")
+        print("Usage: python3 http_capture.py [interface]")
         sys.exit(1)
     print("Interface: " + sys.argv[1])
     sniff(iface=sys.argv[1], prn=http_header, store=0, lfilter=lambda p: "GET" in str(p), filter="tcp[32:4] = 0x47455420")

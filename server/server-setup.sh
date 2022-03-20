@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -x
 
 # setup on streaming server
 cd /tmp/ || exit
@@ -29,6 +30,14 @@ sudo apt -y install python2 python2-dev libreadline-dev libbz2-dev liblzma-dev l
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 sudo python2 get-pip.py
 sudo /usr/bin/python -m pip install requests pymongo numpy scipy 'pandas<0.19' 'rpy2<2.9.0'
+sudo rm get-pip.py
+
+
+# install ryu
+cd /proj/QoESDN/ryu || exit
+sudo apt update && sudo apt install python3 python3-dev python3-pip
+/usr/bin/python3 -m pip install .
+
 
 # Prepare mpd file for streaming
 sudo mkdir -p /var/www/html/ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/
