@@ -1,4 +1,6 @@
 server/result/
+server/result2/
+*.mp4
 *.mkv
 .DS_Store
 .idea/

@@ -5,7 +5,7 @@ set -x
 cd /tmp/ || exit
 
 # install basic dependencies
-sudo apt update && sudo apt install -y zsh mongodb vim screen apache2 build-essential libssl-dev libffi-dev htop
+sudo apt update && sudo apt install -y zsh mongodb vim screen apache2 build-essential libssl-dev libffi-dev htop ffmpeg
 sudo systemctl enable mongodb apache2
 sudo systemctl restart mongodb apache2
 
